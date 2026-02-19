@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using DiscordRPC;
 using System.Threading.Tasks;
 
 class CreativeRPC
 {
-    private static readonly DiscordRpcClient Client = ProjectDefinitions.DiscordClient;
+    private static readonly DiscordRpcClient Client = new("1470924586953478299");
     private static readonly DateTime StartTimestamp = DateTime.UtcNow;
 
     public static async void Start()
@@ -28,7 +28,7 @@ class CreativeRPC
 
         Client.SetPresence(new RichPresence
         {
-            State = "Replace in DiscordRichPresence to change this text",
+            State = "change in discord rich presence",
             Timestamps = new Timestamps { Start = StartTimestamp },
 
             Assets = new Assets
