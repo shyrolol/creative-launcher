@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="FortniteLauncher.Pages.MainShellPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FortniteLauncher.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="Black">
+        <NavigationView x:Name="MainNavigation"
+                        Loaded="MainNavigation_Loaded"
+                        SelectionChanged="MainNavigation_SelectionChanged"
+                        PaneDisplayMode="Left"
+                        IsSettingsVisible="False"
+                        IsBackButtonVisible="Collapsed"
+                        IsPaneToggleButtonVisible="False"
+                        IsPaneOpen="True"
+                        OpenPaneLength="220"
+                        AlwaysShowHeader="False"
+                        Background="Black">
+
+            <NavigationView.Resources>
+                <Thickness x:Key="NavigationViewHeaderMargin">56,26,0,0</Thickness>
+                <SolidColorBrush x:Key="NavigationViewDefaultPaneBackground" Color="Black"/>
+                <SolidColorBrush x:Key="NavigationViewExpandedPaneBackground" Color="Black"/>
+            </NavigationView.Resources>
+
+            <NavigationView.MenuItems>
+                <NavigationViewItem x:Name="PlayPageItem" Content="Play" Foreground="White">
+                    <NavigationViewItem.Icon>
+                        <ImageIcon Width="24" Height="24" Margin="-4">
+                            <ImageIcon.Source>
+                                <SvgImageSource UriSource="ms-appx:///Content/Texture/Icons/IC_Play.svg"/>
+                            </ImageIcon.Source>
+                        </ImageIcon>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItem x:Name="DownloadsItem" Content="Download" Foreground="White">
+                    <NavigationViewItem.Icon>
+                        <ImageIcon Width="24" Height="24" Margin="-4">
+                            <ImageIcon.Source>
+                                <SvgImageSource UriSource="ms-appx:///Content/Texture/Icons/IC_Download.svg"/>
+                            </ImageIcon.Source>
+                        </ImageIcon>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItem x:Name="LeaderboardItem" Content="Leaderboard" Foreground="White">
+                    <NavigationViewItem.Icon>
+                        <ImageIcon Width="24" Height="24" Margin="-4">
+                            <ImageIcon.Source>
+                                <SvgImageSource UriSource="ms-appx:///Content/Texture/Icons/IC_Leaderboard.svg"/>
+                            </ImageIcon.Source>
+                        </ImageIcon>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItem x:Name="ServerStatusItem" Content="Servers status" Foreground="White">
+                    <NavigationViewItem.Icon>
+                        <ImageIcon Width="24" Height="24" Margin="-4">
+                            <ImageIcon.Source>
+                                <SvgImageSource UriSource="ms-appx:///Content/Texture/Icons/IC_ServerStatus.svg"/>
+                            </ImageIcon.Source>
+                        </ImageIcon>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+
+            <NavigationView.FooterMenuItems>
+                <NavigationViewItem x:Name="SettingsItem" Content="Settings" Foreground="White">
+                    <NavigationViewItem.Icon>
+                        <ImageIcon Width="24" Height="24" Margin="-4">
+                            <ImageIcon.Source>
+                                <SvgImageSource UriSource="ms-appx:///Content/Texture/Icons/IC_Settings.svg"/>
+                            </ImageIcon.Source>
+                        </ImageIcon>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+            </NavigationView.FooterMenuItems>
+
+            <Frame x:Name="RootFrame"/>
+
+        </NavigationView>
+    </Grid>
+</Page>
